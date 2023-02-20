@@ -27,6 +27,18 @@ jobs:
       - name: Install playwright chromium browser
         run: pnpx playwright install chromium
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-      - run: pnpm run build
+      - name: Turbo cache
+        id: turbo-cache
+        uses: actions/cache@v2
+        with:
+          path: .turbo
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.job }}-${{ github.ref_name }}-
+      - name: build
+        run: |
+          pnpm run build --cache-dir=".turbo"
       - run: pnpm run start & 
-      - run: pnpm run ci
+      - name: test
+        run: |
+          pnpm run ci --cache-dir=".turbo"
