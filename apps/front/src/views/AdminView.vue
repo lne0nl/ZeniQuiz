@@ -34,7 +34,6 @@ const pathname = window.location.pathname;
 const URL = origin + pathname + quizID;
 
 const createQuiz = (e: Event) => {
-  console.log(`${URL}#/display/${quizID}`);
   e.preventDefault();
   quizID = nanoid(5);
   socket.connect();
