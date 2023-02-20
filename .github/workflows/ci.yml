@@ -38,6 +38,9 @@ jobs:
       - name: build
         run: |
           pnpm run build --cache-dir=".turbo"
+      - name: build-only
+        run: |
+          pnpm run build-only --cache-dir=".turbo"
       - run: pnpm run start & 
       - name: test
         run: |
