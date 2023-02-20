@@ -12,7 +12,6 @@ const route = useRoute();
 const socket = io(import.meta.env.VITE_BACK_URL, {
   autoConnect: false,
 });
-console.log("Back URL => ", import.meta.env.VITE_BACK_URL);
 const quizID = route.params.id;
 
 let team: Ref<Team> = ref({
