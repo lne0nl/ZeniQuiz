@@ -1,0 +1,19 @@
+{
+  "name": "@zeniquiz/functions",
+  "version": "1.0.1",
+  "description": "",
+  "main": "./build/index.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "qrcode": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.0"
+  }
+}

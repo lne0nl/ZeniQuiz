@@ -1,0 +1,20 @@
+{
+  "name": "web-tests",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start-server": "cd ../../apps/front && npm run preview",
+    "test": "playwright test",
+    "e2e:test": "start-server-and-test start-server http://localhost:4173 test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "front": "workspace:*",
+    "start-server-and-test": "^1.15.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.28.1"
+  }
+}

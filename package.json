@@ -1,0 +1,18 @@
+{
+  "name": "zeniquiz",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "ci": "turbo run build e2e:test",
+    "build": "turbo run build --output-logs=errors-only --parallel",
+    "start": "turbo run start",
+    "dev": "turbo run dev --parallel",
+    "e2e:test": "turbo run e2e:test"
+  },
+  "keywords": [],
+  "author": "Raphaël Grand <raphael.grand@zenika.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^1.8.1"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "message": {
+    "admin": {
+      "quiz": {
+        "name": "Donnez un nom au quiz",
+        "create": "Créer",
+        "screen": "Affichage de {quizName}",
+        "start": "Démarrer le quiz",
+        "delete": "Supprimer le quiz"
+      },
+      "display": {
+        "code": "Afficher le QR code",
+        "teams": "Afficher les équipes"
+      },
+      "hide": {
+        "code": "Hide QR code"
+      }
+    },
+    "user": {
+      "name": "Chose a name",
+      "play": "Jouer !"
+    },
+    "quiz": {
+      "over": "Le quiz est terminé, merci pour votre participation !",
+      "missing": "Ce quiz n'existe pas"
+    }
+  }
+}
+ 
