@@ -15,5 +15,6 @@ jobs:
           cache: "pnpm"
       - run: pnpm install --prefer-offline --frozen-lockfile
       - run: pnpx playwright install chromium
-      - run: pnpm run start
+      - run: pnpm run build
+      - run: pnpm run start & 
       - run: pnpm run ci

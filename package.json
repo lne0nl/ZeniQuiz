@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "ci": "turbo run build e2e:test",
+    "ci": "turbo run e2e:test",
     "build": "turbo run build --output-logs=errors-only --parallel",
     "start": "turbo run start",
     "dev": "turbo run dev --parallel",
