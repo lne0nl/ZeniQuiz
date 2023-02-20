@@ -13,8 +13,20 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: "pnpm"
+      - name: Get installed playwright version
+        id: playwright-version
+        run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package-lock.json').dependencies['@playwright/test'].version)")" >> $GITHUB_ENV
+      - name: Cache playwright binaries
+        uses: actions/cache@v3
+        id: playwright-cache
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
       - run: pnpm install --prefer-offline --frozen-lockfile
-      - run: pnpx playwright install --with-deps chromium
+      - name: Install playwright chromium browser
+        run: pnpx playwright install chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
       - run: pnpm run build
       - run: pnpm run start & 
       - run: pnpm run ci
