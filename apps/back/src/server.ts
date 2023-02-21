@@ -69,8 +69,3 @@ io.on("connect", (socket: QuizSocket) => {
 });
 
 server.listen(port, "localhost", () => console.log(`Running server on http://${server.address().address}:${port}`));
-
-// server.listen(port, "localhost", function () {
-//   console.log(server.address())
-//   console.log(`Running server on port ${port}`)
-// })
