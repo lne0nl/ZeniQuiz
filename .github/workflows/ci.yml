@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: "pnpm"
+          node-version: 16
       - name: Get installed playwright version
         id: playwright-version
         run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./pnpm-lock.yaml').dependencies['@playwright/test'].version)")" >> $GITHUB_ENV
