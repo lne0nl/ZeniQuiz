@@ -8,6 +8,10 @@
       "dependsOn": ["^build"],
       "outputs": ["build/**", "dist/**"]
     },
+    "build-only": {
+      "dependsOn": ["^build-only"],
+      "outputs": ["dist/**"]
+    },
     "start": {
       "outputs": []
     },
@@ -15,7 +19,7 @@
       "cache": false
     },
     "e2e:test": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build-only"]
     }
   }
 }

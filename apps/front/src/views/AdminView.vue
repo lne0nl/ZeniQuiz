@@ -212,7 +212,7 @@ socket.on("disconnect", () => {
         </Button>
         <Button @click="razScore">Raz scores</Button>
       </div>
-      <Button @click="raz">
+      <Button @click="raz" id="delete">
         {{ $t("message.admin.quiz.delete") }}
       </Button>
     </div>
