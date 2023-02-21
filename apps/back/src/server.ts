@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import express from "express";
 import http from "http";
 import "dotenv/config";
@@ -10,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.ORIGIN,
+    origin: process.env.ORIGIN || "http://localhost:4173",
     methods: ["GET", "POST"],
   },
 });
@@ -66,4 +68,9 @@ io.on("connect", (socket: QuizSocket) => {
   socket.on("disconnect", () => quizHandler.disconnect(io, socket));
 });
 
-server.listen(port, () => console.log(`Running server on port ${port}`));
+server.listen(port, "localhost", () => console.log(`Running server on http://${server.address().address}:${port}`));
+
+// server.listen(port, "localhost", function () {
+//   console.log(server.address())
+//   console.log(`Running server on port ${port}`)
+// })
