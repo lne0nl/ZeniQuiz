@@ -41,9 +41,7 @@ jobs:
         run: |
           pnpm run build-only --cache-dir=".turbo"
       - name: Start server
-        run: | 
-          pnpm run start &
-          sleep 5
+        run: pnpm run start &
       - name: e2e test
         run: |
           pnpm run ci --cache-dir=".turbo"
