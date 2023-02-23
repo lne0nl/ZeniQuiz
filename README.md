@@ -1,0 +1,1 @@
+![playwright](https://github.com/lne0nl/mapping-of-isaac-v2/actions/workflows/github-actions-init.yml/badge.svg?branch=master)
