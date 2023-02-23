@@ -1,1 +1,1 @@
-![playwright](https://github.com/lne0nl/ZeniQuiz/actions/workflows/ci.yml/badge.svg?branch=main)
+[![Playwright](https://github.com/lne0nl/ZeniQuiz/actions/workflows/ci.yml/badge.svg)](https://github.com/lne0nl/ZeniQuiz/actions/workflows/ci.yml)
