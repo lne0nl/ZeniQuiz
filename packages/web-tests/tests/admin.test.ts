@@ -21,12 +21,22 @@ test("Create,start and delete quiz", async ({ context, page }) => {
   const deleteButton = page.getByText("Delete quiz");
   await expect(deleteButton).toBeVisible();
 
-  console.log("User page in order to trigger some events.");
+  console.log("Open quiz in display screen");
+  const displayPage = await context.newPage();
+  await displayPage.goto(`${baseURL}/#/display/${quizID}`);
+  await expect(displayPage.getByText("Quiz Test")).toBeVisible();
+  await expect(displayPage.getByRole("img")).toBeVisible();
+  await expect(displayPage.getByText(`${baseURL}/#/${quizID}`)).toBeVisible();
+
+  console.log("Open quiz in user view and create a team.");
   const userPage = await context.newPage();
   await userPage.goto(`${baseURL}/#/${quizID}`);
   await userPage.getByPlaceholder("Chose a name").fill("Bruce Wayne");
   await userPage.keyboard.press("Enter");
   await expect(userPage.getByRole("button")).toBeVisible();
+
+  console.log("Check if user appears in display view.")
+  await expect(displayPage.getByText("Bruce Wayne")).toBeVisible();
 
   console.log("Start quiz.");
   await startButton.click();
@@ -51,10 +61,17 @@ test("Create,start and delete quiz", async ({ context, page }) => {
   await expect(winButton).toBeVisible();
   await winButton.click();
 
-  console.log("Check if point has been given to team.");
+  console.log("Check if point has been given to team in display view.");
+  await expect(displayPage.getByText("1")).toBeVisible();
+
+  console.log("Check if point has been given to team in admin view.");
   await displayTeamsButton.click();
   await expect(page.getByText("1")).toBeVisible();
   await page.getByText("X").click();
+
+  console.log("Check if user leave display screen when window is closed");
+  userPage.close();
+  await expect(displayPage.getByText("Bruce Wayne")).not.toBeVisible();
 
   console.log("Delete quiz.");
   await deleteButton.click();
