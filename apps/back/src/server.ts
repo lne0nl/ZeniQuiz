@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.ORIGIN || "http://localhost:4173",
+    origin: process.env.ORIGIN,
     methods: ["GET", "POST"],
   },
 });
