@@ -1,1 +1,1 @@
-![playwright](https://github.com/lne0nl/mapping-of-isaac-v2/actions/workflows/github-actions-init.yml/badge.svg?branch=master)
+![playwright](https://github.com/lne0nl/ZeniQuiz/actions/workflows/ci.yml/badge.svg?branch=main)
