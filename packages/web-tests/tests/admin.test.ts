@@ -69,7 +69,7 @@ test("Create,start and delete quiz", async ({ context, page }) => {
   await expect(page.getByText("1")).toBeVisible();
   await page.getByText("X").click();
 
-  console.log("Check if user leave display screen when window is closed");
+  console.log("Check if user leave display screen when window is closed.");
   userPage.close();
   await expect(displayPage.getByText("Bruce Wayne")).not.toBeVisible();
 

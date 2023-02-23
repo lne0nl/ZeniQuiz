@@ -1,15 +1,13 @@
 {
   "name": "@zeniquiz/functions",
   "version": "1.0.1",
-  "description": "",
   "main": "./build/index.js",
   "types": "./index.d.ts",
   "scripts": {
     "build": "tsc --build",
     "ci:build": "tsc --build"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Raphaël Grand <raphael.grand@zenika.com>",
   "license": "ISC",
   "dependencies": {
     "qrcode": "^1.5.1"
