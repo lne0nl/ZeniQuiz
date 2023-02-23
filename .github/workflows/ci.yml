@@ -34,14 +34,11 @@ jobs:
           key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
           restore-keys: |
             turbo-${{ github.job }}-${{ github.ref_name }}-
-      - name: Build
+      - name: Build for CI
         run: |
-          pnpm run build --cache-dir=".turbo"
-      - name: build-only
-        run: |
-          pnpm run build-only --cache-dir=".turbo"
+          pnpm run ci:build --cache-dir=".turbo"
       - name: Start server
-        run: pnpm run start &
+        run: pnpm --filter back run ci:start &
       - name: e2e test
         run: |
-          pnpm run ci --cache-dir=".turbo"
+          pnpm run e2e:test --cache-dir=".turbo"

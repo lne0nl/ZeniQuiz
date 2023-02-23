@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "ci": "turbo run e2e:test",
     "build": "turbo run build --output-logs=errors-only --parallel",
-    "build-only": "turbo run build-only",
-    "start": "turbo run start",
+    "ci:build": "turbo run ci:build",
     "dev": "turbo run dev --parallel",
     "e2e:test": "turbo run e2e:test"
   },
